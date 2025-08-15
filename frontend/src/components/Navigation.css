@@ -1,0 +1,142 @@
+/* --- Base Styles (Desktop) --- */
+.navbar {
+  background-color: #003366;
+  padding: 0 2rem; /* Use padding for spacing instead of gap */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.navbar-logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 2rem; /* Use margin for spacing */
+}
+
+.nav-item a {
+  color: #e0f7ff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: transform 0.3s ease-out, color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.logout-btn {
+  background-color: #db4437;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.logout-btn:hover {
+  transform: scale(1.1);
+}
+
+/* --- Hamburger Menu (Hidden on Desktop) --- */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+
+/* =================================================================== */
+/* === RESPONSIVE STYLES (Mobile) === */
+/* =================================================================== */
+@media screen and (max-width: 960px) {
+  /* Hide the desktop links */
+  .nav-list {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #003366;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  /* Show the menu when 'open' class is added */
+  .nav-list.open {
+    max-height: 500px; /* Or a height large enough to show all items */
+  }
+
+  .nav-item {
+    margin: 0;
+    width: 100%;
+  }
+
+  .nav-item a, .nav-item .logout-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-radius: 0;
+  }
+  .nav-item a:hover {
+    background-color: #004a99;
+    transform: scale(1); /* Disable scale on mobile for cleaner look */
+  }
+  .logout-btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* --- Hamburger Icon Styles --- */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+  }
+
+  .hamburger-menu .line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* --- Hamburger Animation to "X" --- */
+  .hamburger-menu.open .line-1 {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+
+  .hamburger-menu.open .line-2 {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open .line-3 {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+}

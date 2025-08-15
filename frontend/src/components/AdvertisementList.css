@@ -1,0 +1,236 @@
+/* General Body & Font Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+:root {
+  --primary-color: #005c97;
+  --accent-color: #00cec9;
+  --primary-color-light: #3e92cc;
+  --hero-gradient-start: #004e89;
+  --hero-gradient-end: #00294b;
+  --light-bg-color: #f7f9fc;
+  --white-color: #ffffff;
+  --text-dark: #2d3436;
+  --text-light: #636e72;
+  --border-color: #dfe6e9;
+  --card-dark-bg: #121212;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--light-bg-color);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+}
+
+/* --- MODIFIED: Main Page Wrapper --- */
+.advertisement-page-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 2rem 0 2rem;
+  /* This is the main fix to prevent overlap */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================================================================
+// PAGE SECTIONS
+// =================================================================== */
+
+.hero-section-jobs {
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+  border-radius: 20px;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+/* Subtle background texture */
+.hero-section-jobs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23p)"/></svg>');
+}
+
+.hero-section-jobs h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.8rem;
+  color: var(--white-color);
+  margin: 0 0 1rem 0;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, var(--white-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-section-jobs p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.section-container {
+    margin-bottom: 5rem;
+}
+.section-heading {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+}
+
+.info-box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.info-box-card {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 92, 151, 0.05);
+    cursor: pointer; 
+}
+.info-box-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 92, 151, 0.12);
+    border-color: var(--primary-color);
+}
+.info-box-icon {
+    font-size: 2.5rem;
+    color: var(--white-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.info-box-title { font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600; }
+.info-box-description { color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem; }
+.info-box-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+.featured-companies-section {
+    margin-bottom: 5rem;
+}
+.company-logos-container {
+    overflow: hidden;
+    padding: 2rem 0;
+    background: var(--white-color);
+    border-radius: 12px;
+    position: relative;
+    width: 100%;
+}
+.company-logos-container::before,
+.company-logos-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+.company-logos-container::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--white-color));
+}
+.company-logos-container::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--white-color));
+}
+.logos-slide {
+    display: flex;
+    width: fit-content;
+    animation: scroll 30s linear infinite;
+}
+.company-logo-card {
+    height: 60px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+.company-logo-card img {
+    height: 100%;
+    max-width: 120px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+.trending-jobs-section {
+    background-color: var(--white-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 5rem;
+    border: 1px solid var(--border-color);
+}
+.trending-jobs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.trending-job-card { background-color: var(--light-bg-color); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--border-color); transition: all 0.3s ease; }
+.trending-job-card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 4px 20px rgba(0, 92, 151, 0.1); }
+.trending-job-position { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.trending-job-salary { color: var(--text-light); font-size: 1rem; }
+
+/* --- MODIFIED: Advertisement List Container --- */
+.advertisement-list-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 2rem 0;
+  width: 100%;
+  padding-top: 1rem; /* Added padding to prevent overlap with title */
+}
+
+.advertisement-card { background-color: var(--card-dark-bg); color: #eee; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); padding: 30px; transition: box-shadow 0.3s ease, transform 0.3s ease; width: 350px; max-width: 100%; }
+.advertisement-card:hover { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9); transform: translateY(-5px); }
+.advertisement-position { font-family: 'Poppins', sans-serif; color: var(--accent-color); font-size: 1.5rem; margin-top: 0; margin-bottom: 0.5rem; }
+.advertisement-company { color: #ccc; font-weight: 500; margin-top: 0; margin-bottom: 1.5rem; }
+.advertisement-message { font-style: italic; color: #ddd; line-height: 1.6; border-left: 3px solid var(--primary-color); padding-left: 15px; margin: 0 0 1.5rem 0; }
+.advertisement-contact { background-color: #1e1e1e; text-align: left; padding: 15px; margin-top: 20px; border-radius: 5px; }
+.advertisement-contact h6 { margin: 5px 0 10px; text-transform: uppercase; font-weight: 600; color: #bbb; }
+.advertisement-contact ul { list-style: none; margin: 0; padding: 0; }
+.advertisement-contact li { color: #ccc; margin-bottom: 8px; }
+.advertisement-contact a { color: var(--primary-color-light); text-decoration: none; }
+.advertisement-contact a:hover { text-decoration: underline; }
+
+.component-section { width: 100%; margin-top: 2rem; padding-top: 2rem; }
+#post-advertisement-section, #add-student-section, #add-idea-section { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.loading-message, .no-results-message { color: var(--text-light); font-size: 1.2rem; font-weight: 500; text-align: center; padding: 2rem; width: 100%; }
+.section-divider-container { width: 100%; max-width: 1200px; margin: 4rem auto 3rem auto; text-align: center; position: relative; }
+.section-divider { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(0, 92, 151, 0), rgba(0, 92, 151, 0.75), rgba(0, 92, 151, 0)); }
+.section-title { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: var(--light-bg-color); padding: 0 2rem; color: #004a99; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.8rem; white-space: nowrap; z-index: 1; }
+
+@media (max-width: 768px) {
+  .hero-section-jobs h1 { font-size: 2.5rem; }
+  .section-title, .section-heading { font-size: 1.4rem; }
+  .info-box-grid { grid-template-columns: 1fr; }
+}

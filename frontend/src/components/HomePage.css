@@ -1,0 +1,291 @@
+/* =================================================================== */
+/* --- GENERAL & HERO SECTION --- */
+/* =================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.home-page-wrapper {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+.home-section {
+  padding: 4rem 1.5rem;
+}
+.home-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-section {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
+}
+.hero-background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -2;
+}
+.hero-background img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+.hero-background img.active {
+  opacity: 1;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 31, 61, 0.7);
+  z-index: -1;
+}
+.hero-content {
+  color: #fff;
+  max-width: 800px;
+}
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.hero-content .highlight-text {
+  color: #00aaff;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+/* =================================================================== */
+/* --- "ARE YOU?" PERSONA SECTION --- */
+/* =================================================================== */
+.persona-section {
+  background-color: #f8f9fa;
+}
+.persona-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 2.5rem;
+}
+.persona-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.persona-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #dee2e6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.persona-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: #007bff;
+}
+.persona-card-icon {
+  font-size: 3.5rem;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+.persona-card-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 0.5rem 0;
+}
+.persona-card-content p {
+  color: #6c757d;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+.persona-card-arrow {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-top: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.persona-card:hover .persona-card-arrow {
+  transform: translateX(5px);
+}
+
+/* =================================================================== */
+/* --- ABOUT US SECTION --- */
+/* =================================================================== */
+.about-us-section {
+  background-color: #ffffff;
+  text-align: center;
+}
+.about-section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 1rem;
+}
+.about-section-text {
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* =================================================================== */
+/* --- STATS AND LOGOS SECTION (CORRECTED) --- */
+/* =================================================================== */
+.stats-section-wrapper { 
+  background-color: #f8f9fa; 
+  text-align: center; 
+}
+.large-stats-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1rem; 
+}
+.stat-item .stat-number { 
+  font-size: 3rem; 
+  font-weight: 700; 
+  color: #007bff; 
+}
+.stat-item .stat-title { 
+  color: #6c757d; 
+}
+.stats-divider { 
+  height: 1px; 
+  background-color: #e9ecef; 
+  margin: 3rem auto; 
+  width: 80%; 
+}
+.slider-title { 
+  color: #6c757d; 
+  margin-bottom: 2rem; 
+}
+.logo-slider-container { 
+  overflow: hidden; 
+  position: relative; 
+}
+.logo-slider .logo-track { 
+  display: flex; 
+  width: calc(250px * 12); /* 6 original + 6 clones */
+  animation: 30s slide infinite linear; 
+}
+.slider-logo { 
+  width: 250px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  font-size: 3rem; 
+  color: #adb5bd; 
+}
+
+/* --- THIS IS THE FIX --- */
+/* Target the SVG icon inside the slider logo div */
+.slider-logo svg {
+  filter: grayscale(100%); /* Start in black and white */
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+/* On hover, bring it to full color */
+.slider-logo:hover svg {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes slide { 
+  from { transform: translateX(0); } 
+  to { transform: translateX(-50%); } 
+}
+
+/* =================================================================== */
+/* --- TESTIMONIALS & FOOTER (Unchanged) --- */
+/* =================================================================== */
+.testimonials-section { 
+  background-color: #fff; 
+  text-align: center; 
+}
+.testimonials-section h2 { 
+  font-size: 2.5rem; 
+  font-weight: 600; 
+  color: #343a40; 
+  margin-bottom: 2.5rem; 
+}
+.testimonials-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 2rem; 
+}
+
+.footer-section { 
+  background-color: #001f3d; 
+  color: #fff; 
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+.footer-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 3rem; 
+  padding-bottom: 3rem;
+  text-align: left;
+}
+.footer-col h4 { 
+  font-size: 1.3rem; 
+  margin-bottom: 1.5rem; 
+  font-weight: 600;
+}
+.footer-col p { 
+  color: #b0c4de; 
+  line-height: 1.7; 
+  font-size: 1rem; 
+  margin: 0;
+}
+.social-links { 
+  display: flex; 
+  gap: 1.5rem; 
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+.social-links a { 
+  color: #fff; 
+  font-size: 1.8rem; 
+  transition: color 0.3s, transform 0.3s; 
+}
+.social-links a:hover { 
+  color: #00aaff; 
+  transform: translateY(-2px);
+}
+.footer-bottom { 
+  border-top: 1px solid #003366; 
+  padding-top: 2rem; 
+}
+.footer-bottom p { 
+  margin: 0; 
+  color: #b0c4de; 
+  font-size: 0.95rem; 
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.5rem; }
+  .footer-grid { text-align: center; }
+  .social-links { justify-content: center; }
+}
