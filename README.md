@@ -87,7 +87,7 @@ Feel free to customize this `README.md` further with screenshots, deployment ins
 
 ##  Team Members
 
-Kiruthiyan Theivendrarasa 
-Shampavi Premananthan 
-Pious Hephzibah Peries 
-Jannan Harichandran
+1)Kiruthiyan Theivendrarasa 
+2)Shampavi Premananthan 
+3)Pious Hephzibah Peries 
+4)Jannan Harichandran
